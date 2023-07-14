@@ -10,6 +10,7 @@ import {
   IonLabel,
   IonList,
 } from "@ionic/react";
+import BiorhythmCard from "./components/BiorhythmCard";
 
 const getToday = () => new Date().toISOString().slice(0, "yyyy-mm-dd".length);
 
@@ -45,9 +46,7 @@ function App() {
         <p>
           Birth date: <b>{birthDate}</b>
         </p>
-        <p>
-          Target date: <b>{targetDate}</b>
-        </p>
+        <BiorhythmCard targetDate={targetDate} />
       </IonContent>
     </IonApp>
   );
