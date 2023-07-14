@@ -11,9 +11,11 @@ import {
   IonList,
 } from "@ionic/react";
 
+const getToday = () => new Date().toISOString().slice(0, "yyyy-mm-dd".length);
+
 function App() {
-  const [userName, setUserName] = useState("");
-  const handleChange = (event) => setUserName(event.detail.value);
+  const [birthDate, setBirthDate] = useState("");
+  const [targetDate, setTargetDate] = useState(getToday());
   return (
     <IonApp>
       <IonHeader>
@@ -24,10 +26,28 @@ function App() {
       <IonContent className="ion-padding">
         <IonList>
           <IonItem>
-            <IonLabel position="stacked">Name:</IonLabel>
-            <IonInput value={userName} onIonChange={handleChange}></IonInput>
+            <IonLabel position="fixed">Birth Date:</IonLabel>
+            <IonInput
+              type="date"
+              value={birthDate}
+              onIonChange={(event) => setBirthDate(event.detail.value)}
+            ></IonInput>
+          </IonItem>
+          <IonItem>
+            <IonLabel position="fixed">Target date:</IonLabel>
+            <IonInput
+              type="date"
+              value={targetDate}
+              onIonChange={(event) => setTargetDate(event.detail.value)}
+            ></IonInput>
           </IonItem>
         </IonList>
+        <p>
+          Birth date: <b>{birthDate}</b>
+        </p>
+        <p>
+          Target date: <b>{targetDate}</b>
+        </p>
       </IonContent>
     </IonApp>
   );
