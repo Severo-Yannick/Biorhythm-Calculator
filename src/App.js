@@ -1,12 +1,19 @@
+import { useState } from "react";
 import {
   IonApp,
   IonContent,
   IonHeader,
   IonTitle,
   IonToolbar,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
 } from "@ionic/react";
 
 function App() {
+  const [userName, setUserName] = useState("");
+  const handleChange = (event) => setUserName(event.detail.value);
   return (
     <IonApp>
       <IonHeader>
@@ -15,12 +22,12 @@ function App() {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-        <p>
-          Biorhythm ipsum dolor sit amet consectetur adipisicing elit.
-          Earum sint sapiente odit dolores ratione iure culpa, saepe officia eum
-          impedit, et quia repellendus reprehenderit pariatur. Necessitatibus
-          debitis sit fugit quos.…
-        </p>
+        <IonList>
+          <IonItem>
+            <IonLabel position="stacked">Name:</IonLabel>
+            <IonInput value={userName} onIonChange={handleChange}></IonInput>
+          </IonItem>
+        </IonList>
       </IonContent>
     </IonApp>
   );
