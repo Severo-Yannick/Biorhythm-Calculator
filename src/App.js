@@ -43,10 +43,9 @@ function App() {
             ></IonInput>
           </IonItem>
         </IonList>
-        <p>
-          Birth date: <b>{birthDate}</b>
-        </p>
-        <BiorhythmCard targetDate={targetDate} />
+        {birthDate && (
+          <BiorhythmCard targetDate={targetDate} birthDate={birthDate} />
+        )}
       </IonContent>
     </IonApp>
   );
