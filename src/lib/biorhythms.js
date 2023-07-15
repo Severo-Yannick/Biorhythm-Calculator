@@ -4,7 +4,7 @@ export function calculateBiorhythms(birthDate, targetDate, cycle) {
   return {
     physical: calculateBiorhythm(birthDate, targetDate, cycle),
     emotional: calculateBiorhythm(birthDate, targetDate, cycle),
-    intellectual: 0.0,
+    intellectual: calculateBiorhythm(birthDate, targetDate, cycle),
   };
 }
 

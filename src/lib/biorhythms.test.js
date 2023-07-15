@@ -9,3 +9,8 @@ it("calculates the emotional biorhythm", () => {
   const biorhythms = calculateBiorhythms("1999-12-31", "2022-12-31", 28);
   expect(biorhythms.physical).toBeCloseTo(0.2225);
 });
+
+it("calculates the intellectual biorhythm", () => {
+  const biorhythms = calculateBiorhythms("1999-12-31", "2022-12-31", 33);
+  expect(biorhythms.physical).toBeCloseTo(-0.4582);
+});
