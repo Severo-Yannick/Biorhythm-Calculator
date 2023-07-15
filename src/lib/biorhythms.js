@@ -1,10 +1,13 @@
 import dayjs from "dayjs";
 
-export function calculateBiorhythms(birthDate, targetDate, cycle) {
+export function calculateBiorhythms(birthDate, targetDate) {
+  const physicalCycle = 23,
+    emotionalCycle = 28,
+    intellectualCycle = 33;
   return {
-    physical: calculateBiorhythm(birthDate, targetDate, cycle),
-    emotional: calculateBiorhythm(birthDate, targetDate, cycle),
-    intellectual: calculateBiorhythm(birthDate, targetDate, cycle),
+    physical: calculateBiorhythm(birthDate, targetDate, physicalCycle),
+    emotional: calculateBiorhythm(birthDate, targetDate, emotionalCycle),
+    intellectual: calculateBiorhythm(birthDate, targetDate, intellectualCycle),
   };
 }
 
