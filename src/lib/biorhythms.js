@@ -1,16 +1,16 @@
 import dayjs from "dayjs";
 
-export function calculateBiorhythms(birthDate, targetDate) {
+export function calculateBiorhythms(birthDate, targetDate, cycle) {
   return {
-    physical: calculateBiorhythm(birthDate, targetDate),
+    physical: calculateBiorhythm(birthDate, targetDate, cycle),
     emotional: 0.0,
     intellectual: 0.0,
   };
 }
 
-function calculateBiorhythm(birthDate, targetDate) {
+function calculateBiorhythm(birthDate, targetDate, cycle) {
   const birthDay = dayjs(birthDate);
   const targetDay = dayjs(targetDate);
   const diff = targetDay.diff(birthDay, "day");
-  return Math.sin((2 * Math.PI * diff) / 23);
+  return Math.sin((2 * Math.PI * diff) / cycle);
 }
