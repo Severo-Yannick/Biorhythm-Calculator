@@ -11,11 +11,12 @@ import {
   IonList,
 } from "@ionic/react";
 import BiorhythmCard from "./components/BiorhythmCard";
+import { useStoredState } from "./lib/hooks";
 
 const getToday = () => new Date().toISOString().slice(0, "yyyy-mm-dd".length);
 
 function App() {
-  const [birthDate, setBirthDate] = useState("");
+  const [birthDate, setBirthDate] = useStoredState("birthDate", "");
   const [targetDate, setTargetDate] = useState(getToday());
   return (
     <IonApp>
