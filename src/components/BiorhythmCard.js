@@ -21,7 +21,7 @@ const BiorhythmCard = ({ birthDate, targetDate }) => {
         <IonCardTitle>{formatDate(targetDate)}</IonCardTitle>
       </IonCardHeader>
       <IonCardContent>
-        <BiorhythmChart />
+        <BiorhythmChart birthDate={birthDate} targetDate={targetDate} />
         <p>Physical: {biorhythms.physical.toFixed(4)}</p>
         <p>Emotional: {biorhythms.emotional.toFixed(4)}</p>
         <p>Intellectual: {biorhythms.intellectual.toFixed(4)}</p>
