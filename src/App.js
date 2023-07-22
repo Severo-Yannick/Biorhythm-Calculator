@@ -12,8 +12,7 @@ import {
 } from "@ionic/react";
 import BiorhythmCard from "./components/BiorhythmCard";
 import { useStoredState } from "./lib/hooks";
-
-const getToday = () => new Date().toISOString().slice(0, "yyyy-mm-dd".length);
+import { getToday } from "./utils/getToday";
 
 function App() {
   const [birthDate, setBirthDate] = useStoredState("birthDate", "");
